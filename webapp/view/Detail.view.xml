@@ -238,6 +238,11 @@ xmlns:m="sap.m" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns="sap.uxap"
                                                             <m:Input editable="false"/>
                                                         </form:fields>
                                                     </form:FormElement>
+                                                    <form:FormElement label="SN">
+                                                        <form:fields>
+                                                            <m:Input editable="false"/>
+                                                        </form:fields>
+                                                    </form:FormElement>
                                                     <form:FormElement label="B2">
                                                         <form:fields>
                                                             <m:Input editable="false"/>
