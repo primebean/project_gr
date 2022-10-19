@@ -1,0 +1,331 @@
+<mvc:View controllerName="sap.sync.projectgr.controller.Detail" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" 
+xmlns:m="sap.m" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns="sap.uxap" xmlns:l="sap.ui.layout">
+    <ObjectPageLayout id="ObjectPageLayout" showTitleInHeaderContent="true" alwaysShowContentHeader="false" preserveHeaderStateOnScroll="false" headerContentPinnable="true" isChildPage="true" upperCaseAnchorBar="false">
+        
+        <headerTitle>
+            <ObjectPageDynamicHeaderTitle>
+                <expandedHeading>
+                    <m:VBox>
+                        <m:Title text="물품 창고 배치" wrapping="true" />
+                         <!-- <m:ObjectMarker type="Favorite" class="sapUiTinyMarginBegin" /> -->
+                            <m:VBox>
+                                <m:Label text="Today Date" />
+                                    <m:DatePicker
+                                        dateValue="{detail>/today}"
+                                        displayFormat="short"
+                                        change="handleChange"
+                                        class="sapUiSmallMarginBottom"/>
+                            </m:VBox>
+                            <m:HBox>
+                                <m:Label text="부서 코드 :  " />
+                                <m:Label text=" 나중에 찾자" />
+                            </m:HBox>
+                            <m:HBox>
+                                <m:Label text="부서 명 :  " />
+                                <m:Label text=" 구매팀" />
+                            </m:HBox>
+                    </m:VBox>
+                </expandedHeading>
+                <snappedHeading>
+                    <m:FlexBox fitContainer="true" alignItems="Center">
+                        <m:Title text="물품 창고 배치 Detail" wrapping="true" />
+                    </m:FlexBox>
+                </snappedHeading>
+            </ObjectPageDynamicHeaderTitle>
+             
+        </headerTitle>
+       
+        <headerContent>
+            <m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch" />
+        </headerContent>
+
+        <sections>
+            <ObjectPageSection title="GR Information">
+                <subSections>
+                    <ObjectPageSubSection>
+                    <blocks>
+                    <m:VBox>
+                        
+                            <m:Text text="GR Information" />
+                            <m:Table id="GRTable" inset="false" items="{detail>/GRdataSet}" class="sapFDynamicPageAlignContent" width="auto">
+                                <m:columns>
+                                    <m:Column width="7em"
+                                       demandPopin="true"
+                                       minScreenWidth="Tablet">
+                                        <m:Text text="지점코드" />
+                                    </m:Column>
+                                    <m:Column width="7em"
+                                            demandPopin="true"
+                                            minScreenWidth="Tablet">
+                                        <m:Text text="PO번호" />
+                                    </m:Column>
+                                    <m:Column width="12em"
+                                            demandPopin="true"
+                                            minScreenWidth="Tablet">
+                                        <m:Text text="품목번호" />
+                                    </m:Column>
+                                    <m:Column width="12em"
+                                            demandPopin="true"
+                                            minScreenWidth="Tablet">
+                                        <m:Text text="PO날짜" />
+                                    </m:Column>
+                                    <m:Column width="12em"
+                                            demandPopin="true"
+                                            minScreenWidth="Desktop">
+                                        <m:Text text="납기요청일" />
+                                    </m:Column>
+                                    <m:Column width="12em"
+                                            demandPopin="true"
+                                            minScreenWidth="Desktop">
+                                        <m:Text text="요청부서코드" />
+                                    </m:Column>
+                                    <m:Column width="12em"
+                                            demandPopin="true"
+                                            minScreenWidth="Desktop">
+                                        <m:Text text="제품ID" />
+                                    </m:Column>
+                                    <m:Column width="8em"
+                                            demandPopin="true"
+                                            minScreenWidth="Desktop">
+                                        <m:Text text="요청주문수량" />
+                                    </m:Column>
+                                    <m:Column width="8em"
+                                            demandPopin="true"
+                                            minScreenWidth="Desktop">
+                                        <m:Text text="입고수량" />
+                                    </m:Column>
+                                    <m:Column width="12em"
+                                            demandPopin="true"
+                                            minScreenWidth="Desktop">
+                                        <m:Text text="입고날짜" />
+                                    </m:Column>
+                                    <m:Column width="12em"
+                                            demandPopin="true"
+                                            minScreenWidth="Desktop">
+                                        <m:Text text="공급업체" />
+                                    </m:Column>
+                                    <m:Column width="12em"
+                                            demandPopin="true"
+                                            minScreenWidth="Desktop">
+                                        <m:Text text="업무담당자" />
+                                    </m:Column>
+                                    
+                                
+                                </m:columns>
+                                <m:items>
+                                    <m:ColumnListItem type="Navigation" press=".onListItemPress">
+                                        <m:cells>
+                                            <m:ObjectIdentifier title="{detail>Plant}" />
+                                            <m:ObjectIdentifier title="{detail>Pono}" />
+                                            <m:ObjectIdentifier title="{detail>Seqno}" />
+                                            <m:ObjectIdentifier title="{
+                                                path: 'detail>Podate',
+                                                type: 'sap.ui.model.type.Date'
+                                            }" />
+                                            <m:ObjectIdentifier title="{
+                                                path: 'detail>Drqdate',
+                                                type: 'sap.ui.model.type.Date'
+                                            }" />
+                                            <m:ObjectIdentifier title="{detail>Depid}" />
+                                            <m:ObjectIdentifier title="{detail>Prodid}" />
+                                            <m:ObjectIdentifier title="{detail>Tpurq}" />
+                                            <m:ObjectIdentifier title="{detail>Grprodq}" />
+                                            <m:ObjectIdentifier title="{
+                                                path: 'detail>Grdate',
+                                                type: 'sap.ui.model.type.Date'
+                                            }" />
+                                            <m:ObjectIdentifier title="{detail>Bpid}" />
+                                            <m:ObjectIdentifier title="{detail>Picid}" />
+                                        </m:cells>
+                                    </m:ColumnListItem>
+                                </m:items>
+                            </m:Table>
+                    </m:VBox>
+                    </blocks>
+
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+
+            <ObjectPageSection title="물품 창고 배치">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <blocks>
+                        	<m:VBox class="sapUiSmallMargin">
+                                <form:Form id="FormDisplay480_Trial"
+                                        editable="true">
+                                        <form:layout>
+                                            <form:ResponsiveGridLayout
+                                                labelSpanXL="4"
+                                                labelSpanL="4"
+                                                labelSpanM="4"
+                                                labelSpanS="12"
+                                                adjustLabelSpan="false"
+                                                emptySpanXL="0"
+                                                emptySpanL="0"
+                                                emptySpanM="0"
+                                                emptySpanS="0"
+                                                columnsXL="3"
+                                                columnsL="2"
+                                                columnsM="2"
+                                                singleContainerFullSize="false" />
+                                        </form:layout>
+                                        <form:formContainers>
+                                            <form:FormContainer>
+                                                <form:formElements>
+                                                    <form:FormElement label="부서코드">
+                                                        <form:fields>
+                                                            <m:ComboBox
+                                                                id="depidInput"
+                                                                selectedKey="{Main>/sSearchDepid}"
+                                                                placeholder="부서를 입력하세요."
+                                                                showSecondaryValues="true">
+                                                                <m:items>
+                                                                    <core:ListItem 
+                                                                        key="JFAC" 
+                                                                        text="제주시설팀"
+                                                                        additionalText="JFAC"/>
+                                                                    <core:ListItem 
+                                                                        key="JFOD" 
+                                                                        text="제주식음료팀"
+                                                                        additionalText="JFOD"/>
+                                                                    <core:ListItem 
+                                                                        key="JMAT" 
+                                                                        text="제주비품팀"
+                                                                        additionalText="JMAT"/>
+                                                                    <core:ListItem 
+                                                                        key="SFAC" 
+                                                                        text="서울시설팀"
+                                                                        additionalText="SFAC"/>
+                                                                    <core:ListItem 
+                                                                        key="SFOD" 
+                                                                        text="서울식음료팀"
+                                                                        additionalText="SFOD"/>
+                                                                    <core:ListItem 
+                                                                        key="SMAT" 
+                                                                        text="서울비품팀"
+                                                                        additionalText="SMAT"/>
+                                                                </m:items>
+                                                            </m:ComboBox>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                </form:formElements>
+                                            </form:FormContainer>
+                                            <form:FormContainer>
+                                                <form:formElements>
+                                                    <form:FormElement label="3층">
+                                                        <form:fields>
+                                                            <m:Input editable="false"/>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                    <form:FormElement label="6층">
+                                                        <form:fields>
+                                                            <m:Input editable="false"/>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                    <form:FormElement label="9층">
+                                                        <form:fields>
+                                                            <m:Input editable="false"/>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                    <form:FormElement label="SR">
+                                                        <form:fields>
+                                                            <m:Input editable="false"/>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                    <form:FormElement label="SF">
+                                                        <form:fields>
+                                                            <m:Input editable="false"/>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                    <form:FormElement label="B2">
+                                                        <form:fields>
+                                                            <m:Input editable="false"/>
+                                                        </form:fields>
+                                                    </form:FormElement>
+                                                </form:formElements>
+                                            </form:FormContainer>
+                                        </form:formContainers>
+                                    </form:Form>
+                                </m:VBox>
+                            <!-- <m:Text id="headerKey" text="물품 창고 배치" />
+
+                            <m:VBox>
+                            <m:ComboBox
+                                    id="depidInput"
+                                    selectedKey="{Main>/sSearchDepid}"
+                                    placeholder="부서를 입력하세요."
+                                    showSecondaryValues="true">
+                                    <m:items>
+                                        <core:ListItem 
+                                            key="JFAC" 
+                                            text="제주시설팀"
+                                            additionalText="JFAC"/>
+                                        <core:ListItem 
+                                            key="JFOD" 
+                                            text="제주식음료팀"
+                                            additionalText="JFOD"/>
+                                        <core:ListItem 
+                                            key="JMAT" 
+                                            text="제주비품팀"
+                                            additionalText="JMAT"/>
+                                        <core:ListItem 
+                                            key="SFAC" 
+                                            text="서울시설팀"
+                                            additionalText="SFAC"/>
+                                        <core:ListItem 
+                                            key="SFOD" 
+                                            text="서울식음료팀"
+                                            additionalText="SFOD"/>
+                                        <core:ListItem 
+                                            key="SMAT" 
+                                            text="서울비품팀"
+                                            additionalText="SMAT"/>
+                                            
+                                    </m:items>
+                                </m:ComboBox>
+                                <m:Text  text="창고위치" />
+                                <m:Input
+                                    id="f3"
+                                    value="{Main>/sSearchPono}"
+                                    placeholder="배치 수량을 입력하세요.">
+                                </m:Input>
+                                <m:Input
+                                    id="f6"
+                                    value="{Main>/sSearchPono}"
+                                    placeholder="배치 수량을 입력하세요.">
+                                </m:Input>
+                                <m:Input
+                                    id="f9"
+                                    value="{Main>/sSearchPono}"
+                                    placeholder="배치 수량을 입력하세요.">
+                                </m:Input>
+                                <m:Input
+                                    id="sr"
+                                    value="{Main>/sSearchPono}"
+                                    placeholder="배치 수량을 입력하세요.">
+                                </m:Input>
+                                <m:Input
+                                    id="sn"
+                                    value="{Main>/sSearchPono}"
+                                    placeholder="배치 수량을 입력하세요.">
+                                </m:Input>
+                                <m:Input
+                                    id="sf"
+                                    value="{Main>/sSearchPono}"
+                                    placeholder="배치 수량을 입력하세요.">
+                                </m:Input>
+                                <m:Input
+                                    id="b2"
+                                    value="{Main>/sSearchPono}"
+                                    placeholder="배치 수량을 입력하세요.">
+                                </m:Input>
+                           </m:VBox>  -->
+                        </blocks>
+                        
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+        </sections>
+    </ObjectPageLayout>
+</mvc:View>
