@@ -69,7 +69,7 @@ sap.ui.define(
         var oModel = this.getView().getModel();
         var oViewModel = this.getView().getModel();
 
-        var msg = '저장이 완료되었습니다.';
+        var msg = '재고 업데이트 완료!';
         MessageToast.show(msg);
 
       }

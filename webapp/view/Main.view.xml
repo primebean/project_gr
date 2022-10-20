@@ -16,8 +16,6 @@
             </f:DynamicPageTitle>
         </f:title>
 
-        
-
         <f:content>
             <VBox fitContainer="true">
 <!-- 
