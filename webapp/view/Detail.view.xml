@@ -18,7 +18,7 @@ xmlns:m="sap.m" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns="sap.uxap"
                             </m:VBox>
                             <m:HBox>
                                 <m:Label text="부서 코드 :  " />
-                                <m:Label text=" 나중에 찾자" />
+                                <m:Label text=" PUR" />
                             </m:HBox>
                             <m:HBox>
                                 <m:Label text="부서 명 :  " />
@@ -44,106 +44,116 @@ xmlns:m="sap.m" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns="sap.uxap"
                 <subSections>
                     <ObjectPageSubSection>
                     <blocks>
-                    <m:VBox>
-                        
-                            <m:Text text="GR Information" />
-                            <m:Table id="GRTable" inset="false" items="{detail>/GRdataSet}" class="sapFDynamicPageAlignContent" width="auto">
-                                <m:columns>
-                                    <m:Column width="7em"
-                                       demandPopin="true"
-                                       minScreenWidth="Tablet">
-                                        <m:Text text="지점코드" />
-                                    </m:Column>
-                                    <m:Column width="7em"
-                                            demandPopin="true"
-                                            minScreenWidth="Tablet">
-                                        <m:Text text="PO번호" />
-                                    </m:Column>
-                                    <m:Column width="12em"
-                                            demandPopin="true"
-                                            minScreenWidth="Tablet">
-                                        <m:Text text="품목번호" />
-                                    </m:Column>
-                                    <m:Column width="12em"
-                                            demandPopin="true"
-                                            minScreenWidth="Tablet">
-                                        <m:Text text="PO날짜" />
-                                    </m:Column>
-                                    <m:Column width="12em"
-                                            demandPopin="true"
-                                            minScreenWidth="Desktop">
-                                        <m:Text text="납기요청일" />
-                                    </m:Column>
-                                    <m:Column width="12em"
-                                            demandPopin="true"
-                                            minScreenWidth="Desktop">
-                                        <m:Text text="요청부서코드" />
-                                    </m:Column>
-                                    <m:Column width="12em"
-                                            demandPopin="true"
-                                            minScreenWidth="Desktop">
-                                        <m:Text text="제품ID" />
-                                    </m:Column>
-                                    <m:Column width="8em"
-                                            demandPopin="true"
-                                            minScreenWidth="Desktop">
-                                        <m:Text text="요청주문수량" />
-                                    </m:Column>
-                                    <m:Column width="8em"
-                                            demandPopin="true"
-                                            minScreenWidth="Desktop">
-                                        <m:Text text="입고수량" />
-                                    </m:Column>
-                                    <m:Column width="12em"
-                                            demandPopin="true"
-                                            minScreenWidth="Desktop">
-                                        <m:Text text="입고날짜" />
-                                    </m:Column>
-                                    <m:Column width="12em"
-                                            demandPopin="true"
-                                            minScreenWidth="Desktop">
-                                        <m:Text text="공급업체" />
-                                    </m:Column>
-                                    <m:Column width="12em"
-                                            demandPopin="true"
-                                            minScreenWidth="Desktop">
-                                        <m:Text text="업무담당자" />
-                                    </m:Column>
-                                    
-                                
-                                </m:columns>
-                                <m:items>
-                                    <m:ColumnListItem type="Navigation" press=".onListItemPress">
-                                        <m:cells>
-                                            <m:ObjectIdentifier title="{detail>Plant}" />
-                                            <m:ObjectIdentifier title="{detail>Pono}" />
-                                            <m:ObjectIdentifier title="{detail>Seqno}" />
-                                            <m:ObjectIdentifier title="{
-                                                path: 'detail>Podate',
+                        <m:VBox class="sapUiSmallMargin">
+                            <form:Form id="FormDisplayColumn_oneGroup"
+                                editable="true">
+                                <form:title>
+                                    <core:Title text="GR Information" />
+                                </form:title>
+                                    <form:layout>
+                                        <form:ResponsiveGridLayout
+                                            labelSpanXL="4"
+                                            labelSpanL="4"
+                                            labelSpanM="4"
+                                            labelSpanS="12"
+                                            adjustLabelSpan="false"
+                                            emptySpanXL="0"
+                                            emptySpanL="0"
+                                            emptySpanM="0"
+                                            emptySpanS="0"
+                                            columnsXL="3"
+                                            columnsL="2"
+                                            columnsM="2"
+                                            singleContainerFullSize="false" />
+                                    </form:layout>
+                                <form:formContainers>
+                                    <form:FormContainer>
+                                        <form:formElements>
+                                            <form:FormElement label="지점코드">
+                                                <form:fields>
+                                                    <m:ObjectIdentifier title="{detail>/GRdataSet/Plant}"/>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement label="PO번호">
+                                                <form:fields>
+                                                    <m:ObjectIdentifier title="{detail>/GRdataSet/Pono}" />
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement label="품목번호">
+                                                <form:fields>
+                                                    <m:ObjectIdentifier title="{detail>/GRdataSet/Seqno}" />
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement label="PO날짜">
+                                                <form:fields>
+                                                    <m:ObjectIdentifier title="{
+                                                path: 'detail>/GRdataSet/Podate',
                                                 type: 'sap.ui.model.type.Date'
                                             }" />
-                                            <m:ObjectIdentifier title="{
-                                                path: 'detail>Drqdate',
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement label="납기요청일">
+                                                <form:fields>
+                                                    <m:ObjectIdentifier title="{
+                                                path: 'detail>/GRdataSet/Podate',
                                                 type: 'sap.ui.model.type.Date'
                                             }" />
-                                            <m:ObjectIdentifier title="{detail>Depid}" />
-                                            <m:ObjectIdentifier title="{detail>Prodid}" />
-                                            <m:ObjectIdentifier title="{detail>Tpurq}" />
-                                            <m:ObjectIdentifier title="{detail>Grprodq}" />
-                                            <m:ObjectIdentifier title="{
-                                                path: 'detail>Grdate',
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement label="요청부서코드">
+                                                <form:fields>
+                                                    <m:ObjectIdentifier title="{detail>/GRdataSet/Depid}" />
+                                                </form:fields>
+                                            </form:FormElement>
+                                        </form:formElements>
+                                    </form:FormContainer>
+                                </form:formContainers>        
+                                <form:formContainers>
+                                    <form:FormContainer>
+                                        <form:formElements>
+                                            <form:FormElement label="제품ID">
+                                                <form:fields>
+                                                    <m:ObjectIdentifier title="{detail>/GRdataSet/Prodid}"/>
+                                                    <!-- <m:Text text="{detail>/GRdataSet/Prodid}"/> -->
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement label="요청주문수량">
+                                                <form:fields>
+                                                    <m:ObjectIdentifier title="{detail>/GRdataSet/Tpurq}" />
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement label="입고 수량">
+                                                <form:fields>
+                                                    <m:ObjectIdentifier title="{detail>/GRdataSet/Grprodq}"  />
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement label="입고 날짜">
+                                                <form:fields>
+                                                    <m:ObjectIdentifier title="{
+                                                path: 'detail>/GRdataSet/Grdate',
                                                 type: 'sap.ui.model.type.Date'
-                                            }" />
-                                            <m:ObjectIdentifier title="{detail>Bpid}" />
-                                            <m:ObjectIdentifier title="{detail>Picid}" />
-                                        </m:cells>
-                                    </m:ColumnListItem>
-                                </m:items>
-                            </m:Table>
-                    </m:VBox>
-                    </blocks>
+                                            }"/>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement label="공급업체">
+                                                <form:fields>
+                                                    <m:ObjectIdentifier title="{detail>/GRdataSet/Bpid}"/>
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement label="업무담당자">
+                                                <form:fields>
+                                                    <m:ObjectIdentifier title="{detail>/GRdataSet/Picid}" />
+                                                </form:fields>
+                                            </form:FormElement>
+                                        </form:formElements>
+                                    </form:FormContainer>
+                                </form:formContainers>
+                            </form:Form>
+                        </m:VBox>
+                   
+                  </blocks>
 
-                    </ObjectPageSubSection>
+                  </ObjectPageSubSection>
                 </subSections>
             </ObjectPageSection>
 
@@ -177,7 +187,7 @@ xmlns:m="sap.m" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns="sap.uxap"
                                                         <form:fields>
                                                             <m:ComboBox
                                                                 id="depidInput"
-                                                                selectedKey="{Main>/sSearchDepid}"
+                                                                selectedKey="{detail>/depidInput}"
                                                                 placeholder="부서를 입력하세요."
                                                                 showSecondaryValues="true">
                                                                 <m:items>
@@ -215,43 +225,72 @@ xmlns:m="sap.m" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns="sap.uxap"
                                                 <form:formElements>
                                                     <form:FormElement label="3층">
                                                         <form:fields>
-                                                            <m:Input editable="false"/>
+                                                            <m:Input  id="f3" 
+                                                            editable="{= 
+                                                                ${detail>/depidInput} === 'JMAT' || 
+                                                                ${detail>/depidInput} === 'SMAT'
+                                                           }"/>
                                                         </form:fields>
                                                     </form:FormElement>
-                                                    <form:FormElement label="6층">
+                                                    <form:FormElement label="6층" >
                                                         <form:fields>
-                                                            <m:Input editable="false"/>
+                                                            <m:Input  id="f6" 
+                                                            editable="{= 
+                                                                ${detail>/depidInput} === 'JMAT' || 
+                                                                ${detail>/depidInput} === 'SMAT'
+                                                           }"/>
                                                         </form:fields>
                                                     </form:FormElement>
-                                                    <form:FormElement label="9층">
+                                                    <form:FormElement label="9층" >
                                                         <form:fields>
-                                                            <m:Input editable="false"/>
+                                                            <m:Input  id="f9" 
+                                                            editable="{= 
+                                                                ${detail>/depidInput} === 'JMAT' || 
+                                                                ${detail>/depidInput} === 'SMAT'
+                                                           }"/>
                                                         </form:fields>
                                                     </form:FormElement>
-                                                    <form:FormElement label="SR">
+                                                    <form:FormElement label="SR" >
                                                         <form:fields>
-                                                            <m:Input editable="false"/>
+                                                            <m:Input  id="sr" 
+                                                            editable="{= 
+                                                                ${detail>/depidInput} === 'JFOD' || 
+                                                                ${detail>/depidInput} === 'SFOD'
+                                                           }"/>
                                                         </form:fields>
                                                     </form:FormElement>
-                                                    <form:FormElement label="SF">
+                                                    <form:FormElement label="SF" >
                                                         <form:fields>
-                                                            <m:Input editable="false"/>
+                                                            <m:Input  id="sf" 
+                                                            editable="{= 
+                                                                ${detail>/depidInput} === 'JFOD' || 
+                                                                ${detail>/depidInput} === 'SFOD'
+                                                           }"/>
                                                         </form:fields>
                                                     </form:FormElement>
-                                                    <form:FormElement label="SN">
+                                                    <form:FormElement label="SN" >
                                                         <form:fields>
-                                                            <m:Input editable="false"/>
+                                                           <m:Input  id="sn" 
+                                                            editable="{= 
+                                                                ${detail>/depidInput} === 'JFOD' || 
+                                                                ${detail>/depidInput} === 'SFOD'
+                                                           }"/>
                                                         </form:fields>
                                                     </form:FormElement>
-                                                    <form:FormElement label="B2">
+                                                    <form:FormElement label="B2" >
                                                         <form:fields>
-                                                            <m:Input editable="false"/>
+                                                            <m:Input  id="b2" 
+                                                            editable="{= 
+                                                                ${detail>/depidInput} === 'JFAC' || 
+                                                                ${detail>/depidInput} === 'SFAC'
+                                                           }"/>
                                                         </form:fields>
                                                     </form:FormElement>
                                                 </form:formElements>
                                             </form:FormContainer>
                                         </form:formContainers>
                                     </form:Form>
+                                    <m:Button text="저장" press="onSave"/>
                                 </m:VBox>
                             <!-- <m:Text id="headerKey" text="물품 창고 배치" />
 
