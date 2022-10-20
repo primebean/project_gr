@@ -223,7 +223,7 @@ xmlns:m="sap.m" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns="sap.uxap"
                                             </form:FormContainer>
                                             <form:FormContainer>
                                                 <form:formElements>
-                                                    <form:FormElement label="3층">
+                                                    <form:FormElement label="비품 3층">
                                                         <form:fields>
                                                             <m:Input  id="f3" 
                                                             editable="{= 
@@ -232,7 +232,7 @@ xmlns:m="sap.m" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns="sap.uxap"
                                                            }"/>
                                                         </form:fields>
                                                     </form:FormElement>
-                                                    <form:FormElement label="6층" >
+                                                    <form:FormElement label="비품 6층" >
                                                         <form:fields>
                                                             <m:Input  id="f6" 
                                                             editable="{= 
@@ -241,7 +241,7 @@ xmlns:m="sap.m" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns="sap.uxap"
                                                            }"/>
                                                         </form:fields>
                                                     </form:FormElement>
-                                                    <form:FormElement label="9층" >
+                                                    <form:FormElement label="비품 9층" >
                                                         <form:fields>
                                                             <m:Input  id="f9" 
                                                             editable="{= 
@@ -250,7 +250,7 @@ xmlns:m="sap.m" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns="sap.uxap"
                                                            }"/>
                                                         </form:fields>
                                                     </form:FormElement>
-                                                    <form:FormElement label="SR" >
+                                                    <form:FormElement label="식음료 SR" >
                                                         <form:fields>
                                                             <m:Input  id="sr" 
                                                             editable="{= 
@@ -259,7 +259,7 @@ xmlns:m="sap.m" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns="sap.uxap"
                                                            }"/>
                                                         </form:fields>
                                                     </form:FormElement>
-                                                    <form:FormElement label="SF" >
+                                                    <form:FormElement label="식음료 SF" >
                                                         <form:fields>
                                                             <m:Input  id="sf" 
                                                             editable="{= 
@@ -268,7 +268,7 @@ xmlns:m="sap.m" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns="sap.uxap"
                                                            }"/>
                                                         </form:fields>
                                                     </form:FormElement>
-                                                    <form:FormElement label="SN" >
+                                                    <form:FormElement label="식음료 SN" >
                                                         <form:fields>
                                                            <m:Input  id="sn" 
                                                             editable="{= 
@@ -277,7 +277,7 @@ xmlns:m="sap.m" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form" xmlns="sap.uxap"
                                                            }"/>
                                                         </form:fields>
                                                     </form:FormElement>
-                                                    <form:FormElement label="B2" >
+                                                    <form:FormElement label="시설 B2" >
                                                         <form:fields>
                                                             <m:Input  id="b2" 
                                                             editable="{= 

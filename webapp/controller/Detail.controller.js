@@ -1,12 +1,13 @@
 sap.ui.define(
   [
     "sap/ui/core/mvc/Controller",
-    "sap/ui/model/json/JSONModel"
+    "sap/ui/model/json/JSONModel",
+    "sap/m/MessageToast"
   ],
   /**
    * @param {typeof sap.ui.core.mvc.Controller} Controller
    */
-  function (Controller, JSONModel) {
+  function (Controller, JSONModel, MessageToast) {
     "use strict";
 
     return Controller.extend("sap.sync.projectgr.controller.Detail", {
@@ -47,7 +48,8 @@ sap.ui.define(
         oModel.read(sPath, {
                 success: function (oData) {
                   oView.getModel('detail')
-                       .setProperty('/GRdataSet', oData);
+                       .setProperty('/GRdataSet', oData);   // <== 오브젝트
+                      //.setProperty('/GRdataSet', [oData]);  <== 배열
                   oView.setBusy(false);
                 },
                 error: function() {
@@ -62,6 +64,17 @@ sap.ui.define(
         //   model: "products",
         // });
       },
+
+      onSave: function () {
+        var oModel = this.getView().getModel();
+        var oViewModel = this.getView().getModel();
+
+        var msg = '저장이 완료되었습니다.';
+        MessageToast.show(msg);
+
+      }
+
+
     });
   }
 );
